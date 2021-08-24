@@ -1,0 +1,1 @@
+sample	sample_info	batch	fastq_id
