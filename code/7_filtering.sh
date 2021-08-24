@@ -1,13 +1,13 @@
-## run on hpcpbs01
-##
-## Post-alignment Filtering of uninformative reads: PCR duplicates (picard), mitochondrial reads, non-uniuqe alignments,
-## 
+#!/bin/bash
 
-INPUTDIR=output/alignment/bowtie2/
-SCRIPTSDIR=code/filtering/
-OUTDIR=output/filtering/filteredbams/
+# Post-alignment Filtering of uninformative reads: PCR duplicates (picard), non-uniuqe alignments,
+
+WD=$( pwd )
+INPUTDIR=${WD}/output/alignment/bowtie2/
+SCRIPTSDIR=${WD}/code/filtering/
+OUTDIR=${WD}/output/filtering/filteredbams/
 SAMPLES=( ${INPUTDIR}/*.bam )
-BAMSTATSDIR=output/filtering/filterstats/
+BAMSTATSDIR=${WD}/output/filtering/filterstats/
 THREADS=8   ## check
 
 mkdir -p ${SCRIPTSDIR}/{log,qsub} ${OUTDIR} ${BAMSTATSDIR}

@@ -1,9 +1,11 @@
-## run on job server
+#!/bin/bash
 
-DATADIR=data/raw_data/
-FQFILES=( ${DATADIR}/X*/raw_data/S*/*.fq.gz  )
-SCRIPTSDIR=code/fastqc_raw/
-OUTDIR=output/fastqc_raw/
+
+WD=$( pwd )
+FQDIR=${WD}/data/fqfiles/
+FQFILES=( ${FQDIR}/*/*.fq.gz  )
+SCRIPTSDIR=${WD}/code/fastqc_raw/
+OUTDIR=${WD}/output/fastqc_raw/
 
 # make dirs
 mkdir -p ${SCRIPTSDIR}/{log,qsub} ${OUTDIR}

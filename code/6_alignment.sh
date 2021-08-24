@@ -1,14 +1,14 @@
+#!/bin/bash
 
-## run on hpcpbs01
-## Histone mark ChIP-seq
-## ENCODE ChIP-seq alignment parameters for bowtie2
+# ENCODE ChIP-seq alignment parameters for bowtie2
 
-DATADIR=output/cutadapt/
+WD=$( pwd )
+DATADIR=${WD}/output/cutadapt/
 FQFILES=( ${DATADIR}/*_1.trimmed.fq.gz )
 BT2IDX=/reference/genomes/GRCh37_ICGC_standard_v2/indexes/BOWTIE2_2.2.9/GRCh37_ICGC_standard_v2.fa
-SCRIPTSDIR=code/alignment/
-OUTDIR=output/alignment/bowtie2/
-BAMSTATSDIR=output/alignment/bowtie2stats/
+SCRIPTSDIR=${WD}/code/alignment/
+OUTDIR=${WD}/output/alignment/bowtie2/
+BAMSTATSDIR=${WD}/output/alignment/bowtie2stats/
 THREADS=8 ## check
 
 # make dirs

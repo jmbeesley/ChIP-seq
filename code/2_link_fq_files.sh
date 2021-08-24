@@ -1,14 +1,19 @@
 #!/bin/bash
 
+WD=$( pwd )
 DATADIR=data/raw_data/
-FQFILES=( ${DATADIR}/X*/raw_data/S*/*.fq.gz  )
-FQDIR=${WKDIR}/data/fqfiles/
+SAMPLE=( ${DATADIR}/*/raw_data/*/ )
+FQFILES=( ${DATADIR}/*/raw_data/*/*.fq.gz  )
+FQDIR=data/fqfiles/
 
 # create dir and put links into sample dir
-for i in ${FQFILES[@]} ; do
+for i in ${SAMPLE[@]} ; do
 
-    mkdir -p ${FQDIR}/${i} 
-    cd !$
-    ln -s ${DATADIR}/X*/raw_data/${i}/*.fq.gz .
+    sample=$( basename ${i}  )
+    mkdir -p ${FQDIR}/${sample} 
+    ( 
+      cd ${FQDIR}/${sample}
+      ln -s ${WD}/${DATADIR}/*/raw_data/${sample}/*.fq.gz . 
+    )
 
 done

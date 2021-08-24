@@ -1,14 +1,14 @@
-
+#!/bin/bash
 
 # input sample
 # scale samples
 
-WKDIR=/working/lab_georgiat/jonathB/PROJECTS/fredwards/ChIP-seq/H3K27ac_3p26project//
-INPUTDIR=output/filtering/filteredbams/
-SCRIPTSDIR=code/signal_tracks/
-OUTDIR=output/signal_tracks/
+WD=$( pwd )
+INPUTDIR=${WD}/output/filtering/filteredbams/
+SCRIPTSDIR=${WD}/code/signal_tracks/
+OUTDIR=${WD}/output/signal_tracks/
 SAMPLES=( ${INPUTDIR}/*.nodup.sorted.bam )
-CONTROL=S1
+CONTROL=$( grep control ${WD}/docs/sample_info.txt | cut -f1 )
 THREADS=8   ## check
 
 mkdir -p ${SCRIPTSDIR}/{log,qsub} ${OUTDIR} 

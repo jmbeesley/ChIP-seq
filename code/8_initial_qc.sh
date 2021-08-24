@@ -1,11 +1,11 @@
-## run on hpcpbs01
-##
-## fingerprint as a measure of ChIP enrichment
-## 
+#!/bin/bash
 
-INPUTDIR=output/filtering/filteredbams/
-SCRIPTSDIR=code/initial_qc/
-OUTDIR=output/initial_qc/
+# fingerprint as a measure of ChIP enrichment
+
+WD=$( pwd )
+INPUTDIR=${WD}/output/filtering/filteredbams/
+SCRIPTSDIR=${WD}/code/initial_qc/
+OUTDIR=${WD}/output/initial_qc/
 THREADS=1
 
 mkdir -p ${SCRIPTSDIR}/{log,qsub} ${OUTDIR} 

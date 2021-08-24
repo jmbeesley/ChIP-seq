@@ -1,10 +1,12 @@
-## run on job server
-## cutadapt uses multiple cores
-## Illumina universal adapters revealed in fastqc
-FQDIR=data/fqfiles/
+#!/bin/bash
+
+# Illumina universal adapters revealed in fastqc
+
+WD=$( pwd )
+FQDIR=${WD}/data/fqfiles/
 SAMPLELIST=( ${FQDIR}/*/ )
-SCRIPTSDIR=code/cutadapt/
-OUTDIR=output/cutadapt/
+SCRIPTSDIR=${WD}/code/cutadapt/
+OUTDIR=${WD}/output/cutadapt/
 
 # make dirs
 mkdir -p ${SCRIPTSDIR}/{log,qsub} ${OUTDIR}

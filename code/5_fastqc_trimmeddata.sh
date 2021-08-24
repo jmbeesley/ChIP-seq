@@ -1,9 +1,11 @@
-## run on job server
+#!/bin/bash
 
-DATADIR=output/cutadapt/
+
+WD=$( pwd )
+DATADIR=${WD}/output/cutadapt/
 FQFILES=( ${DATADIR}/*.fq.gz  )
-SCRIPTSDIR=code/fastqc_trimmed/
-OUTDIR=output/fastqc_trimmed/
+SCRIPTSDIR=${WD}/code/fastqc_trimmed/
+OUTDIR=${WD}/output/fastqc_trimmed/
 
 # make dirs
 mkdir -p ${SCRIPTSDIR}/{log,qsub} ${OUTDIR}
