@@ -19,7 +19,7 @@ for f in "${SAMPLES[@]}" ; do
 SAMPLE=$( basename "${f%.nodup.sorted.bam}" )
 PREFIX=${SAMPLE}
 FINALBAM=${INPUTDIR}/${PREFIX}.nodup.sorted.bam  ### final bam file
-FINALBW=${OUTDIR}/${PREFIX}.coverage.bw 
+FINALBW=${OUTDIR}/${PREFIX}.rpgccoverage.bw 
 CONTROLBAM=${INPUTDIR}/${CONTROL}.nodup.sorted.bam
 LOG2RATIOBW=${OUTDIR}/${PREFIX}.l2rcontrol.bw 
 
