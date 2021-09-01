@@ -7,8 +7,8 @@ INPUTDIR=${WD}/output/filtering/filteredbams/
 SCRIPTSDIR=${WD}/code/peakcalling/
 OUTDIR=${WD}/output/peakcalling/
 SAMPLES=( ${INPUTDIR}/*.nodup.sorted.bam )
-BLACKLIST=${WD}/docs/hg19.chrom.sizes
-CHROMSIZES=${WD}/docs/hg19.encode.blacklist.merged.bed
+CHROMSIZES=${WD}/docs/hg19.chrom.sizes
+BLACKLIST=${WD}/docs/hg19.encode.blacklist.merged.bed
 
 # create directories
 mkdir -p ${SCRIPTSDIR}/{log,qsub} ${OUTDIR}
